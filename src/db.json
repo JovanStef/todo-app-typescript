@@ -1,0 +1,31 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "desc": "some todo",
+      "name": "todo name",
+      "dateCreated": "Tue Oct 27 2020 18:12:51 GMT+0100 (Central European Standard Time)",
+      "dateDue": "Tue Oct 27 2020 18:12:51 GMT+0100 (Central European Standard Time)",
+      "importance": "high",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "desc": "another todo",
+      "name": "todo name",
+      "dateCreated": "Tue Oct 27 2020 18:12:51 GMT+0100 (Central European Standard Time)",
+      "dateDue": "Tue Oct 27 2020 18:12:51 GMT+0100 (Central European Standard Time)",
+      "importance": "high",
+      "completed": true
+    },
+    {
+      "id": "773f5168-4f32-4871-b562-5454edbe4425",
+      "name": "AAAAAA",
+      "importance": "medium",
+      "dateDue": "2020-10-12",
+      "desc": "Todo descaaaaaaaaaription",
+      "dateCreated": "2020-10-29T19:37:39.039Z",
+      "completed": false
+    }
+  ]
+}
