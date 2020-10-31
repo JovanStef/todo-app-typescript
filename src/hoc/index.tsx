@@ -71,12 +71,12 @@ export class Layout extends React.Component<{},IState,IProps> {
                 const {todoList,error,loading} = this.state
     return (
     <div>
-        Hi
+        <h1 className="display-4">Todo App</h1>
     <p>{error ?'We are having trouble displayin content please try again later':null}</p>
     <p>{loading ?'Loading ...':null}</p>
 
-        <Todolist todoList={todoList}/>
         <CreateTodo todoFromChild={this.handleCreateTodo}/>
+        <Todolist todoList={todoList}/>
         </div>
         
         )

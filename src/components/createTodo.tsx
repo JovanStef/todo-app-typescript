@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 const CreateTodo:FC<IProps>=(props:IProps)=>{
-    const text = "text";
     const importance = [
         {
             value: 'low',
@@ -56,14 +55,17 @@ const CreateTodo:FC<IProps>=(props:IProps)=>{
       }
 
     return(
-        <div>
-            <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <div className="d-flex flex-wrap justify-content-center ">
+        <div className="create-todo-wrapper d-flex flex-column flex-wrap justify-content-center p-3">
+        <div className="border-bottom mb-3"><h5>Create Todo:</h5></div>
+        
+            <form className={classes.root + " d-flex flex-wrap"} noValidate autoComplete="off" onSubmit={handleSubmit}>
                 {/* Todo name */}
             <TextField
           id="outlined-helperText"
           label="Name"
-          defaultValue="Todo"
-          helperText={text}
+          defaultValue=" "
+          helperText="Todo name"
           variant="outlined"
         />
 
@@ -103,12 +105,14 @@ const CreateTodo:FC<IProps>=(props:IProps)=>{
           id="outlined-multiline-static"
           label="Description"
           multiline
-          rows={4}
-          defaultValue="Todo description"
+          rows={2}
+          defaultValue=" "
           variant="outlined"
         ></TextField>
-        <input type="submit" value="Submit" />
+        
+        <input type="submit" value="Save" className="btn btn-secondary align-self-center"/>
         </form>
+        </div>
         </div>
     )
 }
