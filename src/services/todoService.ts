@@ -3,6 +3,8 @@ import {Observable, Subject} from 'rxjs';
 
 const subject_C = new Subject();
 const subject_D = new Subject();
+const subject_F = new Subject();
+
 
 
 
@@ -26,6 +28,11 @@ export const completedActions={
 export const deletedActions={
     deleteTodo:(id:string)=>subject_D.next({id:id}),
     getDeletedTodo:()=>subject_D.asObservable()
+}
+
+export const filterActions={
+    filterTodo:(opt:string)=>subject_F.next({criteria:opt}),
+    getFilterTodo:()=>subject_F.asObservable()
 }
 
    

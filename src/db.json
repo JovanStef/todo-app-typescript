@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": "2",
-      "name": " WEEEE",
+      "name": "WEEEE",
       "importance": "high",
       "dateDue": "2021-03-04",
       "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -11,16 +11,16 @@
     },
     {
       "id": "3",
-      "name": " Some Todo",
+      "name": "Some Todo",
       "importance": "medium",
       "dateDue": "2021-06-24",
       "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "dateCreated": "2020-11-01T15:39:58.710Z",
-      "completed": false
+      "completed": true
     },
     {
       "id": "4",
-      "name": " WEEEE",
+      "name": "WEEEE",
       "importance": "high",
       "dateDue": "2021-03-04",
       "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -29,7 +29,7 @@
     },
     {
       "id": "5",
-      "name": " Some Todo",
+      "name": "Some Todo",
       "importance": "medium",
       "dateDue": "2021-06-24",
       "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -38,7 +38,7 @@
     },
     {
       "id": "51e5375c-14e2-4af8-b65b-5e788c4e93a2",
-      "name": " Another Todo",
+      "name": "Another Todo",
       "importance": "high",
       "dateDue": "2021-05-12",
       "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -47,12 +47,12 @@
     },
     {
       "id": "26e5ee55-974a-484b-beb4-9e5f66904dd5",
-      "name": " TRT",
+      "name": "TRT",
       "importance": "high",
       "dateDue": "2021-04-28",
       "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "dateCreated": "2020-11-01T15:58:45.870Z",
-      "completed": false
+      "completed": true
     }
   ]
 }

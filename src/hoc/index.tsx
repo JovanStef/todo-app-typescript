@@ -4,15 +4,17 @@
 import React  from 'react';
 
 //SERVICES
-import {completedActions,deletedActions} from '../services/todoService';
+import {completedActions,deletedActions, filterActions} from '../services/todoService';
+import {sortByCompleted, sortByImportance, sortByName} from '../services/helpers';
 //MODELS
 import { IProps } from '../models/IProps';
 import { IState } from '../models/IState';
+import { ITodo } from '../models/ITodo';
 //COMPONENTS
 import Todolist from '../components/todoList';
 import CreateTodo from '../components/createTodo';
-import { ITodo } from '../models/ITodo';
-import { async, NextObserver, Observer } from 'rxjs';
+import FilterTodo from '../components/filterTodo';
+
 export class Layout extends React.Component<{},IState,IProps> {
     constructor(state:IState){
         super(state)
@@ -22,7 +24,9 @@ export class Layout extends React.Component<{},IState,IProps> {
     updateUrl = "http://localhost:3007/todos"
     deleteUrl = "http://localhost:3007/todos"
     subscriptUpdate:any;
-    subscriptDelete:any
+    subscriptDelete:any;
+    subscriptFilter:any;
+
         state:IState={
             todoList:[],
             error:false,
@@ -135,7 +139,29 @@ export class Layout extends React.Component<{},IState,IProps> {
                 });
             this.subscriptDelete = deletedActions.getDeletedTodo().subscribe((todo:unknown)=>{
                 this.deleteTodo(this.deleteUrl,todo)
-            })    
+            });
+            
+            this.subscriptFilter = filterActions.getFilterTodo().subscribe((opt:any)=>{
+                console.log(opt.criteria)
+                switch(opt.criteria){
+                    case "name":
+                        this.setState({
+                            todoList:[... sortByName(this.state.todoList)]
+                        })
+                        break;
+                    case "importance":
+                        this.setState({
+                            todoList:[... sortByImportance(this.state.todoList)]
+                        })
+                        break;
+                    case "completed":
+                        this.setState({
+                            todoList:[... sortByCompleted(this.state.todoList)]
+                        })
+                        break;
+                        default:
+                }
+            })
             
             // try{
             //     this.subscriptionTodo = loadTodos(this.getUrl).subscribe((todos:unknown)=>{
@@ -168,7 +194,10 @@ export class Layout extends React.Component<{},IState,IProps> {
                 <div className="spinner-border text-secondary" role="status"></div>
             </div>:
             <div>
+                <div className="d-flex flex-wrap justify-content-around">
                 <CreateTodo todoFromChild={this.handleCreateTodo}/>
+                <FilterTodo/>
+                </div>
                 <Todolist todoList={todoList}/>
             </div>}
     </div>
