@@ -28,7 +28,7 @@ export class Layout extends React.Component<{},IState,IProps> {
             error:false,
             loading:true
         }
-        getTodos=async(url:string)=>{
+        getTodos=async(url:string):Promise<any>=>{
             await fetch(url)
             .then((res)=>{
                 if (!res.ok) {
@@ -52,7 +52,7 @@ export class Layout extends React.Component<{},IState,IProps> {
                 });
         }
 
-        addTodo=async(url:string='',data:ITodo | any={})=>{
+        addTodo=async(url:string='',data:ITodo | any={}):Promise<any>=>{
             this.setState({
                 loading:true
             })
@@ -75,7 +75,7 @@ export class Layout extends React.Component<{},IState,IProps> {
             });
         }
 
-        deleteTodo=async(url:string='',data:ITodo | any={})=>{
+        deleteTodo=async(url:string='',data:ITodo | any={}):Promise<ITodo | any>=>{
             this.setState({
                 loading:true
             })
@@ -90,7 +90,7 @@ export class Layout extends React.Component<{},IState,IProps> {
                 return res.json()
             });
         }
-        updateTodo=async(url:string='',data:ITodo | any={})=>{
+        updateTodo=async(url:string='',data:ITodo | any={}):Promise<ITodo | any>=>{
             this.setState({
                 loading:true
             })
@@ -119,7 +119,7 @@ export class Layout extends React.Component<{},IState,IProps> {
             });
         }
 
-        handleCreateTodo=async(props:any)=>{
+        handleCreateTodo=async(props:any):Promise<ITodo | any>=>{
             await this.addTodo(this.setUrl,props).then(data=>console.log('todo created'))
         }
 
@@ -129,16 +129,16 @@ export class Layout extends React.Component<{},IState,IProps> {
 
             },2000)
             
-            this.subscriptUpdate= completedActions.getCompletedTodo().subscribe((todo:any)=>{
+            this.subscriptUpdate= completedActions.getCompletedTodo().subscribe((todo:unknown)=>{
                     this.updateTodo(this.updateUrl,todo)
     
                 });
-            this.subscriptDelete = deletedActions.getDeletedTodo().subscribe((todo:any)=>{
+            this.subscriptDelete = deletedActions.getDeletedTodo().subscribe((todo:unknown)=>{
                 this.deleteTodo(this.deleteUrl,todo)
             })    
             
             // try{
-            //     this.subscriptionTodo = loadTodos(this.getUrl).subscribe((todos:any)=>{
+            //     this.subscriptionTodo = loadTodos(this.getUrl).subscribe((todos:unknown)=>{
             //         this.setState({
             //             todoList:todos,
             //             loading:false

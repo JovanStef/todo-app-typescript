@@ -28,6 +28,7 @@ text-align: center;
 .todo-wrapper{
   position: relative;
   width: 20rem;
+  max-width: 20rem;
   border:1px solid #0069d9;
   border-radius: 10px;
 }

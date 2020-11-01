@@ -1,3 +1,4 @@
+import { ITodo } from './../models/ITodo';
 import {Observable, Subject} from 'rxjs';
 
 const subject_C = new Subject();
@@ -18,7 +19,7 @@ export const loadTodos=(url:string)=>{
 }
 
 export const completedActions={
-    toggleComplete:(id:string,completed:boolean)=>subject_C.next({id:id,completed:completed}),
+    toggleComplete:(id:string,completed:boolean):void=>subject_C.next({id:id,completed:completed}),
     getCompletedTodo:()=>subject_C.asObservable()
 }
 
