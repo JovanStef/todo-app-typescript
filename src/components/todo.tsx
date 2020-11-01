@@ -1,8 +1,17 @@
 import React, { FC, useState } from "react";
 import { IProps, IPropsTodo } from "../models/IProps";
 
+import {completedActions,deletedActions} from '../services/todoService';
+
 const Todo:FC<IPropsTodo> = ({todo:{id,name,desc,dateCreated,dateDue,importance,completed},numOfTodos}:IPropsTodo | any ) => {
     const [showMore , setShowMore] = useState(false);
+
+    const completeTodo=(todoID:string='',completed:boolean=false):void=>{
+        completedActions.toggleComplete(todoID,completed)
+    }
+    const deleteTodo=(todoID:string=''):void=>{
+        deletedActions.deleteTodo(todoID)
+    }
 
     let imporCN = "";
     switch(importance){
@@ -36,8 +45,8 @@ const Todo:FC<IPropsTodo> = ({todo:{id,name,desc,dateCreated,dateDue,importance,
                     <div>Completed: <span className={completed?"badge badge-success":"badge badge-secondary"}>{completed?"Yes":"No"}</span></div>
                 </div>
                 <div className="btn-container d-flex flex-column justify-content-end align-items-end flex-grow-1 mt-3">
-                    <button type="button" className="btn btn-primary">Done</button>
-                    <span className="remove align-self-start">Remove todo</span>
+                    <button type="button" className="btn btn-primary" onClick={()=>completeTodo(id,!completed)}>{completed?"Mark to do":"Done"}</button>
+                    <span className="remove align-self-start" onClick={()=>deleteTodo(id)}>Remove todo</span>
                     </div>
         </div>
     );
